@@ -1,0 +1,24 @@
+---
+id: RAGrant2021Report
+base_name: PicoRuby_ep2
+tags:
+  - PicoRuby
+  - MicroRuby
+  - mruby
+presentation_date: '2022-07-12'
+presentation_start_time: 
+presentation_end_time: 
+version: 2022.7.12.0
+licenses: ["MIT License"]
+slideshare_id: 
+speaker_deck_id: 
+ustream_id: 
+vimeo_id: 
+youtube_id: 
+author:
+  markup_language: :rd
+  name: HASUMI Hitoshi
+  email: hasumikin@gmail.com
+  rubygems_user: hasumikin
+  slideshare_user: 
+  speaker_deck_user: 
