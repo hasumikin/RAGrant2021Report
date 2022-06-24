@@ -1,12 +1,12 @@
 # puts font_families.sort
-@xxx_large_font_size = screen_size(20 * Pango::SCALE)
-@xx_large_font_size = screen_size(18 * Pango::SCALE)
-@x_large_font_size = screen_size(8 * Pango::SCALE)
+@xxx_large_font_size = screen_size(22 * Pango::SCALE)
+@xx_large_font_size = screen_size(16 * Pango::SCALE)
+@x_large_font_size = screen_size(12 * Pango::SCALE)
 @large_font_size = screen_size(6 * Pango::SCALE)
 @normal_font_size = screen_size(4.5 * Pango::SCALE)
 @small_font_size = screen_size(4 * Pango::SCALE)
 @x_small_font_size = screen_size(3.5 * Pango::SCALE)
-@xx_small_font_size = screen_size(2 * Pango::SCALE)
+@xx_small_font_size = screen_size(3 * Pango::SCALE)
 
 @font_family = find_font_family('Franklin Gothic Medium')
 @monospace_font_family = 'Ricty Discord'
@@ -62,30 +62,30 @@ match TitleSlide do |slides|
   slides.prop_set("foreground", "#ffff00")
 end
 match TitleSlide, Title do |title|
-  #title.margin_top = 260
+  title.margin_top = -100
   title.prop_set "size", @xxx_large_font_size
   title.prop_set "font-family", @title_font_family
   title.prop_set "weight", "normal"
 end
 match TitleSlide, Subtitle do |subtitle|
-  subtitle.margin_top = -250
+  subtitle.margin_top = -270
   subtitle.prop_set "size", @xxx_large_font_size
   subtitle.prop_set "font-family", @title_font_family
 end
 match TitleSlide, Author do |authors|
-  authors.margin_top = 0
+  authors.margin_top = -35
 end
 match TitleSlide, ContentSource do |cs|
-  cs.margin_top = 50
-  cs.prop_set "size", @x_small_font_size
+  cs.margin_top = 30
+  cs.prop_set "size", @xx_small_font_size
   cs.prop_set "style", "normal"
 end
 match TitleSlide, Date do |date|
-  date.prop_set "size", @x_small_font_size
+  date.prop_set "size", @xx_small_font_size
   date.prop_set "style", "normal"
 end
 match TitleSlide, Institution do |i|
-  i.prop_set "size", @x_small_font_size
+  i.prop_set "size", @xx_small_font_size
   i.prop_set "style", "normal"
 end
 

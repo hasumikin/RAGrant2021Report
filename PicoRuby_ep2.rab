@@ -3,7 +3,7 @@
 : subtitle
   ruby
 : author
-  Episode Ⅱ
+  Episode Ⅱ\nATTACK OF THE RAKE
 : content-source
    Ruby Association Grant 2021 Report
 : institution
@@ -11,7 +11,7 @@
 : date
    July 12, 2022
 : allotted-time
-   30m
+   25m
 : theme
    theme
 
@@ -28,60 +28,70 @@ Hasumikin, an apprentice to a Rubyist, is strugglingly writing the compiler to c
 : hide-title
    true
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
   # image
   # src = images/architecture_1.png
   # relative_width = 100
-  # relative_margin_top = 0
+  # relative_margin_top = 3
+
+= What happened in Episode Ⅰ
+  # image
+  # src = images/architecture_2.png
+  # relative_width = 100
+  # relative_margin_top = 3
 (('tag:center'))
 PicoRuby compiler for one-chip microcontrollers
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
   # image
   # src = images/rubykaigi_1.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
   # image
   # src = images/rubykaigi_2.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
   # image
   # src = images/rubyconf_1.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
   # image
   # src = images/rubyconf_2.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= Episode Ⅰ
+= What happened in Episode Ⅰ
+  * PRK Firmware
+    * Compiling and applying a `keymap.rb` on a microcontroller without rebooting
+
+= What happened in Episode Ⅰ
   * PRK Firmware
     * Compiling and applying a `keymap.rb` on a microcontroller without rebooting
   * Presentations available on YouTube
     * Japanese -> RubyKaigi Takeout 2021
     * English -> RubyConf 2021
 
-= Targets on episode Ⅱ
+= Targets on Episode Ⅱ
 
-= Targets on episode Ⅱ
+= Targets on Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
 
-= Targets on episode Ⅱ
+= Targets on Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
     * Improving parser and generator to compile mrblib
 
-= Targets on episode Ⅱ
+= Targets on Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
@@ -89,7 +99,7 @@ PicoRuby compiler for one-chip microcontrollers
   * Presym
     * Embedding mrblib in ROM
 
-= Targets on episode Ⅱ
+= Targets on Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
@@ -121,45 +131,45 @@ rake
 = Rake
   * Build process of mruby
     * libmruby_core.a
-      * Includes mruby-compiler and core objects of mruby
+      * Includes mruby-compiler and murby's core objects implemented in C
 
 = Rake
   * Build process of mruby
     * libmruby_core.a
-      * Includes mruby-compiler and core objects of mruby
+      * Includes mruby-compiler and murby's core objects implemented in C
     * mrbc
       * An executable of mruby-compiler
 
 = Rake
   * Build process of mruby
     * libmruby_core.a
-      * Includes mruby-compiler and core objects of mruby
-    * mrbc
-      * An executable of mruby-compiler
-    * mrblib.c
-      * From `mrblib/*.rb`
-
-= Rake
-  * Build process of mruby
-    * libmruby_core.a
-      * Includes mruby-compiler and core objects of mruby
+      * Includes mruby-compiler and murby's core objects implemented in C
     * mrbc
       * An executable of mruby-compiler
     * mrblib.c
       * From `mrblib/*.rb`
-    * libmruby.a
-      * Core objects, mrblib and mruby-compiler
 
 = Rake
   * Build process of mruby
     * libmruby_core.a
-      * Includes mruby-compiler and core objects of mruby
+      * Includes mruby-compiler and murby's core objects implemented in C
     * mrbc
       * An executable of mruby-compiler
     * mrblib.c
       * From `mrblib/*.rb`
     * libmruby.a
-      * Core objects, mrblib and mruby-compiler
+      * Core objects, mrblib, mruby-compiler and mrbgems
+
+= Rake
+  * Build process of mruby
+    * libmruby_core.a
+      * Includes mruby-compiler and murby's core objects implemented in C
+    * mrbc
+      * An executable of mruby-compiler
+    * mrblib.c
+      * From `mrblib/*.rb`
+    * libmruby.a
+      * Core objects, mrblib, mruby-compiler and mrbgems
     * mruby and mirb
 
 = Rakenized PicoRuby
@@ -184,11 +194,14 @@ syntax
    true
 
 = Syntax
-  * As of episode Ⅰ, PicoRuby has minimum syntax rules to implement PRK Firmware
+  * As of Episode Ⅰ, PicoRuby has minimum syntax rules to implement PRK Firmware
+
+= Syntax
+  * As of Episode Ⅰ, PicoRuby has minimum syntax rules to implement PRK Firmware
   * It's not enough to compile mrblib
 
 = Syntax
-  * As of episode Ⅰ, PicoRuby has minimum syntax rules to implement PRK Firmware
+  * As of Episode Ⅰ, PicoRuby has minimum syntax rules to implement PRK Firmware
   * It's not enough to compile mrblib
 \n\n\n
 (('tag:center'))
@@ -210,65 +223,13 @@ syntax
       └─ symbol.rb
 
 = Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-= Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-* `p =` is an assignment. It makes the `p` a local variable
-
-= Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-* `p =` is an assignment. It makes the `p` a local variable
-* Then, the latter `p` of `p = p` is the same local variable which is intialized as `nil` implicitly
-
-= Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-* `p =` is an assignment. It makes the `p` a local variable
-* Then, the latter `p` of `p = p` is the same local variable which is intialized as `nil` implicitly
-* The first `p` of `p p` should be a command due to Ruby syntax
-
-= Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-* `p =` is an assignment. It makes the `p` a local variable
-* Then, the latter `p` of `p = p` is the same local variable which is intialized as `nil` implicitly
-* The first `p` of `p p` should be a command due to Ruby syntax
-* The above is determined by the parser, not runtime
-
-= Syntax
-  # enscript ruby
-
-  p = p
-  p p
-  => nil
-
-* `p =` is an assignment. It makes the `p` a local variable
-* Then, the latter `p` of `p = p` is the same local variable which is intialized as `nil` implicitly
-* The first `p` of `p p` should be a command due to Ruby syntax
-* The above is determined by the parser, not runtime
+  * Singleton method
+  * rescue-ensure-retry
+  * Reswords (keyword as an identifier)
+  * Mass assignment
+  * Splat `*args` `**args`
+  * Assignable `p = p; p p #=> nil`
+  * `-2 ** 2 #=> -4`
 
 = chapter
 presym
@@ -431,11 +392,9 @@ microruby
   end
 
 (('tag:center'))
-(in mruby/)
-\n
-git checkout 3.0.0
-\n
-MRUBY_CONFIG=microruby rake
+
+  cd mruby && git checkout 3.0.0
+  MRUBY_CONFIG=microruby rake
 
 = MicroRuby
   * Build process of MicroRuby
@@ -481,6 +440,18 @@ MRUBY_CONFIG=microruby rake
       * Core objects of mruby, mrblib and picoruby-compiler
     * microruby executable
       * microirb, not yet
+
+= MicroRuby
+  # image
+  # src = images/architecture_2.png
+  # relative_width = 100
+  # relative_margin_top = 3
+
+= MicroRuby
+  # image
+  # src = images/architecture_3.png
+  # relative_width = 100
+  # relative_margin_top = 3
 
 = chapter
 massif
@@ -582,13 +553,17 @@ massif
   # (mruby|microruby|picoruby) \
   #  -e 'puts "Hello World"'
   ------------------------------------
-    mruby       MicroRuby    PicoRuby
+     mruby      MicroRuby    PicoRuby
   ====================================
     136.1 KB    88.05 KB     10.86 KB
   ------------------------------------
 
-* All the figures on 64-bit architecture with glibc
-  * They're probably 30-40% smaller on 32-bit
+(('tag:center'))
+(Note)
+\n
+All the figures on 64-bit architecture with glibc
+\n
+They're probably 25-35% smaller on 32-bit
 
 = chapter
 episode iii?
@@ -600,13 +575,13 @@ episode iii?
   * Struct "mrb_context" now bothers me
     * It holds information like local variables so to IRB work
     * Hard to handle due to intricate dependency among mrb_state, mrb_context and mrb_irep
-    * PicoRuby compiler doesn't want to include mruby's header files as much as possible
+    * PicoRuby compiler doesn't want to include mruby's header files
 
 = Episode Ⅲ
   * Struct "mrb_context" now bothers me
     * It holds information like local variables so to IRB work
     * Hard to handle due to intricate dependency among mrb_state, mrb_context and mrb_irep
-    * PicoRuby compiler doesn't want to include mruby's header files as much as possible
+    * PicoRuby compiler doesn't want to include mruby's header files
   * Possible solutions:\n
     1. Fixing mruby\n
     2. Fixing PicoRuby compiler to make an IREP that can be cast into mrb_irep
@@ -621,11 +596,17 @@ THE IREP STRIKES BACK
    true
 
 = chapter
-thank you
+we're hiring!
   # image
   # src = images/Monstarlab_Logo_Yellow_CMYK.png
   # relative_width = 30
   # relative_margin_top = 1
+== prop
+: hide-title
+   true
+
+= chapter
+(('tag:x-large:may the source\\nbe with you'))
 == prop
 : hide-title
    true
