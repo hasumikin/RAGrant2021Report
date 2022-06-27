@@ -11,7 +11,7 @@
 : date
    July 12, 2022
 : allotted-time
-   25m
+   28m
 : theme
    theme
 
@@ -29,8 +29,6 @@ Hasumikin, an apprentice to a Rubyist, is strugglingly writing the compiler to c
    true
 
 = What happened in Episode Ⅰ
-
-= What happened in Episode Ⅰ
   # image
   # src = images/architecture_1.png
   # relative_width = 100
@@ -44,54 +42,100 @@ Hasumikin, an apprentice to a Rubyist, is strugglingly writing the compiler to c
 (('tag:center'))
 PicoRuby compiler for one-chip microcontrollers
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
+
+= What happened between Episode Ⅰ & Ⅱ
   # image
   # src = images/rubykaigi_1.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
   # image
   # src = images/rubykaigi_2.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
   # image
   # src = images/rubyconf_1.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
   # image
   # src = images/rubyconf_2.png
   # relative_width = 85
   # relative_margin_top = 0
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
+  # enscript ruby
+
+  kbd = Keyboard.new
+  kbd.init_pins(
+    [ 29, 28, 27, 26, 22, 20, 23 ],
+    [ 3, 4, 5, 6, 7, 8, 9]
+  )
+
+  kbd.add_layer :default, %i[
+    KC_ESCAPE KC_Q    KC_W    KC_E        KC_R    KC_T                          KC_Y    KC_U      KC_I     KC_O     KC_P      KC_MINUS
+    KC_TAB    KC_A    KC_S    KC_D        KC_F    KC_G                          KC_H    KC_J      KC_K     KC_L     KC_SCOLON KC_BSPACE
+    KC_LSFT   KC_Z    KC_X    KC_C        KC_V    KC_B      KC_NO     KC_NO     KC_N    KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
+                              KC_NO       KC_LALT KC_LCTL   LOWER_SPC RAISE_ENT SPC_CTL KC_RGUI   KC_NO
+  ]
+  kbd.add_layer :raise, %i[
+    KC_GRAVE  KC_EXLM KC_AT   KC_HASH     KC_DLR  KC_PERC                       KC_CIRC KC_AMPR   KC_ASTER KC_LPRN  KC_RPRN   KC_EQUAL
+    KC_TAB    KC_LABK KC_LCBR KC_LBRACKET KC_LPRN KC_QUOTE                      KC_LEFT KC_DOWN   KC_UP    KC_RIGHT KC_UNDS   KC_PIPE
+    KC_LSFT   KC_RABK KC_RCBR KC_RBRACKET KC_RPRN KC_DQUO   KC_NO     KC_NO     KC_TILD KC_BSLASH KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
+                              KC_NO       KC_LALT KC_LCTL   ADJUST    RAISE_ENT SPC_CTL KC_RGUI   BOOTSEL
+  ]
+
+  kbd.define_composite_key :SPC_CTL, %i[KC_SPACE KC_RCTL]
+
+  kbd.define_mode_key :RAISE_ENT, [ :KC_ENTER, :raise, 150, 150 ]
+
+  rgb = RGB.new(0, 9, 0, false)
+  rgb.effect = :breath
+  kbd.append rgb
+
+  kbd.output_report_changed do |output|
+    rgb.hue = (output & Keyboard::LED_CAPSLOCK > 0) ? 100 : 0
+  end
+
+  kbd.start!
+
+= What happened between Episode Ⅰ & Ⅱ
   * PRK Firmware
     * Compiling and applying a `keymap.rb` on a microcontroller without rebooting
 
-= What happened in Episode Ⅰ
+= What happened between Episode Ⅰ & Ⅱ
   * PRK Firmware
     * Compiling and applying a `keymap.rb` on a microcontroller without rebooting
+  * IRB in keyboard
+    * Any text editor becomes an IRB
+
+= What happened between Episode Ⅰ & Ⅱ
+  * PRK Firmware
+    * Compiling and applying a `keymap.rb` on a microcontroller without rebooting
+  * IRB in keyboard
+    * Any text editor becomes an IRB
   * Presentations available on YouTube
     * Japanese -> RubyKaigi Takeout 2021
     * English -> RubyConf 2021
 
-= Targets on Episode Ⅱ
+= Targets in Episode Ⅱ
 
-= Targets on Episode Ⅱ
+= Targets in Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
 
-= Targets on Episode Ⅱ
+= Targets in Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
     * Improving parser and generator to compile mrblib
 
-= Targets on Episode Ⅱ
+= Targets in Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
@@ -99,7 +143,7 @@ PicoRuby compiler for one-chip microcontrollers
   * Presym
     * Embedding mrblib in ROM
 
-= Targets on Episode Ⅱ
+= Targets in Episode Ⅱ
   * Rake
     * Integrating PicoRuby with mruby's build system
   * Syntax
@@ -222,14 +266,15 @@ syntax
       ├─ string.rb
       └─ symbol.rb
 
-= Syntax
+= Syntax added
   * Singleton method
-  * rescue-ensure-retry
-  * Reswords (keyword as an identifier)
+  * rescue-else-ensure-retry and rescue modifier
+  * Reswords (keyword as an identifier). eg) `next`
   * Mass assignment
   * Splat `*args` `**args`
   * Assignable `p = p; p p #=> nil`
   * `-2 ** 2 #=> -4`
+  * etc.
 
 = chapter
 presym
@@ -571,22 +616,31 @@ episode iii?
 : hide-title
    true
 
-= Episode Ⅲ
+= Episode Ⅲ?
   * Struct "mrb_context" now bothers me
-    * It holds information like local variables so to IRB work
+    * Holds information like local variables so to IRB work
+
+= Episode Ⅲ?
+  * Struct "mrb_context" now bothers me
+    * Holds information like local variables so to IRB work
+    * Hard to handle due to intricate dependency among mrb_state, mrb_context and mrb_irep
+
+= Episode Ⅲ?
+  * Struct "mrb_context" now bothers me
+    * Holds information like local variables so to IRB work
     * Hard to handle due to intricate dependency among mrb_state, mrb_context and mrb_irep
     * PicoRuby compiler doesn't want to include mruby's header files
 
-= Episode Ⅲ
+= Episode Ⅲ?
   * Struct "mrb_context" now bothers me
-    * It holds information like local variables so to IRB work
+    * Holds information like local variables so to IRB work
     * Hard to handle due to intricate dependency among mrb_state, mrb_context and mrb_irep
     * PicoRuby compiler doesn't want to include mruby's header files
   * Possible solutions:\n
     1. Fixing mruby\n
     2. Fixing PicoRuby compiler to make an IREP that can be cast into mrb_irep
 
-= Episode Ⅲ
+= Episode Ⅲ?
 (('tag:center'))
 (('tag:large:\\n\\n'))
 (('tag:xx-large'))

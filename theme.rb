@@ -20,7 +20,7 @@
 @default_emphasis_level2_color = "#ffffff"
 
 set_graffiti_color "#FF2B22"
-set_graffiti_line_width 10
+set_graffiti_line_width 5
 
 #@table_frame_color = "#ffffff"
 #@table_fill_color = "#0f0428"
