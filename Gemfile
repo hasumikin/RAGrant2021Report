@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem "rabbit", path: "/home/hasumi/work/rabbit"
+gem "rabbit", github: "rabbit-shocker/rabbit"
 gem "rake"
